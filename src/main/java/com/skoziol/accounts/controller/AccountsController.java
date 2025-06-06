@@ -24,8 +24,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @Tag(
-        name = "CRUD REST APIs for Accounts in SzymixBANK",
-        description = "CRUD REST APIs in SzymixBank to CREATE, UPDATE, FETCH AND DELETE account details"
+        name = "CRUD REST APIs for Accounts in MyBank",
+        description = "CRUD REST APIs in MyBank to CREATE, UPDATE, FETCH AND DELETE account details"
 )
 @RestController
 @RequestMapping(path = "/api", produces = {MediaType.APPLICATION_JSON_VALUE})
@@ -44,7 +44,7 @@ public class AccountsController {
 
     @Operation(
             summary = "Create Account REST API",
-            description = "REST API to create new Customer & Account inside SzymixBANK"
+            description = "REST API to create new Customer & Account inside MyBank"
     )
     @ApiResponses({
             @ApiResponse(
