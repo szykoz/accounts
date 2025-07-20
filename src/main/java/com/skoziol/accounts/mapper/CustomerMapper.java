@@ -1,7 +1,7 @@
 package com.skoziol.accounts.mapper;
 
-import com.skoziol.accounts.dto.AccountsDto;
-import com.skoziol.accounts.dto.CustomerDto;
+import com.skoziol.accounts.dto.*;
+import com.skoziol.accounts.entity.Accounts;
 import com.skoziol.accounts.entity.Customer;
 
 public class CustomerMapper {
@@ -20,5 +20,16 @@ public class CustomerMapper {
         customer.setEmail(customerDto.email());
         customer.setMobileNumber(customerDto.mobileNumber());
         return customer;
+    }
+
+    public static CustomerDetailsDto mapToCustomerDetailsDto(Customer customer, Accounts accounts, LoansDto loansDto, CardsDto cardsDto) {
+        return new CustomerDetailsDto(
+                customer.getName(),
+                customer.getEmail(),
+                customer.getMobileNumber(),
+                AccountsMapper.mapToAccountsDto(accounts),
+                loansDto,
+                cardsDto
+        );
     }
 }
