@@ -26,6 +26,12 @@ spring:
     openfeign:
       circuitbreaker:
         enabled: true
+  data:
+    redis:
+      connect-timeout: 2s
+      host: localhost
+      port: 6379
+      timeout: 1s
 
 management:
   endpoints:
@@ -77,3 +83,9 @@ resilience4j:
         exponential-backoff-multiplier: 2
         retry-exceptions:
           - java.util.concurrent.TimeoutException
+  ratelimiter:
+    configs:
+      default:
+        timeout-duration: 1000
+        limit-refresh-period: 5000
+        limit-for-period: 1
